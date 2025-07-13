@@ -1,0 +1,245 @@
+/*!* CSS HEX *!*/
+/*:root{*/
+/*    --egyptian-blue: #29339bff;*/
+/*    --air-superiority-blue: #74a4bcff;*/
+/*    --ash-gray: #b6d6ccff;*/
+/*    --cream: #f1fec6ff;*/
+/*    --scarlet: #ff3a20ff;*/
+/*}*/
+
+.container {
+    /* Method 1: Individual properties */
+    -fx-font-family: "Rimouski Sb";
+    -fx-font-size: 16px;
+    -fx-background-image: url("images/main_bg.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.main{
+    -fx-padding: 0 0 0 100;
+}
+.text-label{
+    -fx-text-fill: white;
+}
+
+.main-title{
+    -fx-effect: dropshadow(gaussian, rgba(239, 239, 239, 0.8), 10, 0.8, 0, 0);
+}
+
+.login-container{
+    -fx-background-color: linear-gradient(to top, #501a81, #9949E6FF);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0);
+}
+.text-label{
+    -fx-padding: 5 0 5 0;
+}
+
+.login-button{
+    -fx-background-color: #f1fec6ff;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+}
+
+.sign-up{
+    -fx-text-fill: #18d321;
+}
+
+
+/* Hover effect */
+.login-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66BB6A, #43A047);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 0);
+}
+
+.sign-up:hover{
+    -fx-text-fill: #28b62f;
+}
+
+.login-button:pressed {
+    -fx-background-color: #2e7d32; /* darker color when pressed */
+    -fx-translate-y: 1;            /* optional: mimic press animation */
+}
+
+.sign-up:pressed{
+    -fx-text-fill: #00ff0e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* JavaFX Animated Gradient Text CSS */
+
+/* Moving gradient background effect */
+.animated-gradient-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #96ceb4 75%, #ff6b6b 100%);
+    -fx-background-size: 200% 100%;
+    -fx-animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0% { -fx-background-position: 0% 50%; }
+    50% { -fx-background-position: 100% 50%; }
+    100% { -fx-background-position: 0% 50%; }
+}
+
+/* Rainbow wave effect */
+.rainbow-wave-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #ff0000 0%, #ff8000 16.66%, #ffff00 33.33%,
+    #00ff00 50%, #0080ff 66.66%, #8000ff 83.33%, #ff0000 100%);
+    -fx-animation: rainbow-wave 2s linear infinite;
+}
+
+@keyframes rainbow-wave {
+    0% { -fx-hue-rotate: 0deg; }
+    100% { -fx-hue-rotate: 360deg; }
+}
+
+/* Pulsing radial gradient */
+.pulsing-gradient-text {
+    -fx-fill: radial-gradient(center 50% 50%, radius 50%,
+    #ff4757 0%, #3742fa 50%, #ff4757 100%);
+    -fx-animation: pulse-gradient 2s ease-in-out infinite;
+}
+
+@keyframes pulse-gradient {
+    0% {
+        -fx-scale-x: 1.0;
+        -fx-scale-y: 1.0;
+        -fx-opacity: 1.0;
+    }
+    50% {
+        -fx-scale-x: 1.1;
+        -fx-scale-y: 1.1;
+        -fx-opacity: 0.8;
+    }
+    100% {
+        -fx-scale-x: 1.0;
+        -fx-scale-y: 1.0;
+        -fx-opacity: 1.0;
+    }
+}
+
+/* Rotating colors */
+.rotating-colors-text {
+    -fx-text-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #e74c3c 0%, #f39c12 25%, #27ae60 50%, #3498db 75%, #9b59b6 100%);
+    -fx-animation: rotate-colors 4s linear infinite;
+}
+
+@keyframes rotate-colors {
+    0% { -fx-rotate: 0deg; }
+    25% { -fx-rotate: 90deg; }
+    50% { -fx-rotate: 180deg; }
+    75% { -fx-rotate: 270deg; }
+    100% { -fx-rotate: 360deg; }
+}
+
+/* Glowing gradient effect */
+.glowing-gradient-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #ff006e 0%, #8338ec 33%, #3a86ff 66%, #ff006e 100%);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 110, 0.8), 20, 0, 0, 0);
+    -fx-animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0% {
+        -fx-effect: dropshadow(gaussian, rgba(255, 0, 110, 0.8), 20, 0, 0, 0);
+    }
+    50% {
+        -fx-effect: dropshadow(gaussian, rgba(131, 56, 236, 0.8), 30, 0, 0, 0);
+    }
+    100% {
+        -fx-effect: dropshadow(gaussian, rgba(255, 0, 110, 0.8), 20, 0, 0, 0);
+    }
+}
+
+/* Shimmering effect */
+.shimmer-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #c0c0c0 0%, #ffffff 25%, #c0c0c0 50%, #ffffff 75%, #c0c0c0 100%);
+    -fx-background-size: 200% 100%;
+    -fx-animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { -fx-background-position: -200% 0%; }
+    100% { -fx-background-position: 200% 0%; }
+}
+
+/* Neon glow effect */
+.neon-gradient-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #00ffff 0%, #ff00ff 50%, #00ffff 100%);
+    -fx-effect: dropshadow(gaussian, #00ffff, 10, 0, 0, 0);
+    -fx-animation: neon-flicker 3s ease-in-out infinite;
+}
+
+@keyframes neon-flicker {
+    0%, 100% {
+        -fx-effect: dropshadow(gaussian, #00ffff, 10, 0, 0, 0);
+        -fx-opacity: 1.0;
+    }
+    50% {
+        -fx-effect: dropshadow(gaussian, #ff00ff, 15, 0, 0, 0);
+        -fx-opacity: 0.8;
+    }
+}
+
+/* Fire effect */
+.fire-gradient-text {
+    -fx-fill: linear-gradient(from 0% 100% to 0% 0%,
+    #ff0000 0%, #ff8000 25%, #ffff00 50%, #ff8000 75%, #ff0000 100%);
+    -fx-animation: fire-flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes fire-flicker {
+    0% {
+        -fx-scale-y: 1.0;
+        -fx-translate-y: 0;
+    }
+    100% {
+        -fx-scale-y: 1.05;
+        -fx-translate-y: -2;
+    }
+}
+
+/* Ocean wave effect */
+.ocean-wave-text {
+    -fx-fill: linear-gradient(from 0% 0% to 100% 0%,
+    #004d7a 0%, #008793 25%, #00bf72 50%, #008793 75%, #004d7a 100%);
+    -fx-animation: ocean-wave 3s ease-in-out infinite;
+}
+
+@keyframes ocean-wave {
+    0%, 100% {
+        -fx-translate-y: 0;
+        -fx-scale-y: 1.0;
+    }
+    25% {
+        -fx-translate-y: -3;
+        -fx-scale-y: 0.95;
+    }
+    50% {
+        -fx-translate-y: 0;
+        -fx-scale-y: 1.0;
+    }
+    75% {
+        -fx-translate-y: 3;
+        -fx-scale-y: 1.05;
+    }
+}
