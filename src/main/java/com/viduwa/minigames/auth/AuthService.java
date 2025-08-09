@@ -1,12 +1,11 @@
 package com.viduwa.minigames.auth;
-
 import com.viduwa.minigames.db.DBManager;
+import com.viduwa.minigames.models.User;
 
 import java.sql.*;
 
 public class AuthService {
-
-    public static boolean login(String username, String password) {
+    public static User login(String username, String password) {
         String sql = "SELECT * FROM users WHERE username=? AND password=?";
         try (Connection conn = DBManager.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -15,11 +14,19 @@ public class AuthService {
             stmt.setString(2, password);
 
             ResultSet rs = stmt.executeQuery();
-            return rs.next(); // found user
-
+            if(rs.next()){
+                System.out.println("Login Success");
+                return new User(
+                        rs.getInt("id"),
+                        rs.getString("username")
+                );
+            }else{
+                System.out.println("Login failed");
+                return null;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 

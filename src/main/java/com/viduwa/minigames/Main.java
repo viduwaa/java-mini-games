@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
     private static Stage primaryStage;
 
-
     @Override
     public void start(Stage stage) {
         Font.loadFont(getClass().getResourceAsStream("/fonts/Rimouski.otf"), 14);
@@ -29,13 +28,13 @@ public class Main extends Application {
     }
 
     public static void showRegisterScene() {
-        primaryStage.setScene(new Scene(RegisterScene.get(), 400, 300));
+        primaryStage.setScene(new Scene(RegisterScene.get()));
         primaryStage.setTitle("Register");
     }
 
     public static void showMainMenu(String username) {
-        primaryStage.setScene(new Scene(MainMenuScene.get(username), 400, 300));
-        primaryStage.setTitle("Game Hub - Welcome " + username);
+        primaryStage.setScene(new Scene(MainMenuScene.get(username)));
+        primaryStage.setTitle("Pixel Fun - Welcome " + username);
     }
 
     public static void main(String[] args) {
