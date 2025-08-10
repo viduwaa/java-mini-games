@@ -8,6 +8,7 @@ module com.viduwa.minigames {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql.rowset;
+    requires javafx.media;
 
     // Open packages that contain FXML controllers or classes with @FXML fields
     // This allows javafx.fxml to use reflection on them
