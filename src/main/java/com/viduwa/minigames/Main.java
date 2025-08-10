@@ -33,7 +33,7 @@ public class Main extends Application {
     }
 
     public static void showMainMenu(String username) {
-        primaryStage.setScene(new Scene(MainMenuScene.get(username)));
+        primaryStage.setScene(new Scene(MainMenuScene.get()));
         primaryStage.setTitle("Pixel Fun - Welcome " + username);
     }
 

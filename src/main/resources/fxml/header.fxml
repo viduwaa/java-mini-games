@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viduwa.minigames.controllers.HeaderController">
+
+   <!-- Video Background Layer -->
+   <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1280.0" opacity="1.0" preserveRatio="false" visible="true" />
+
+   <!-- Content Layer with semi-transparent overlay for better text readability -->
+   <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.3);">
+      <children>
+         <AnchorPane prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+            <children>
+               <ImageView fitHeight="100.0" fitWidth="141.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/logo.png" />
+                  </image>
+               </ImageView>
+               <HBox alignment="CENTER_RIGHT" layoutX="761.0" prefHeight="100.0" prefWidth="494.0">
+                  <children>
+                     <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="686.0">
+                        <children>
+
+                           <Label fx:id="userLabel" contentDisplay="CENTER" prefHeight="100.0" prefWidth="174.0" text="" textFill="WHITE">
+                              <font>
+                                 <Font name="Upheaval TT -BRK-" size="43.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <ImageView id="profile" fx:id="profile" fitHeight="49.0" fitWidth="101.0" onMouseClicked="#profile" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                        <image>
+                           <Image url="@../images/profile.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                  <padding>
+                     <Insets right="20.0" />
+                  </padding>
+               </HBox>
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutY="626.0" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+            <children>
+               <HBox alignment="CENTER_RIGHT" layoutX="761.0" prefHeight="100.0" prefWidth="494.0">
+                  <children>
+                     <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="356.0">
+                        <children>
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="191.0" text="Score" textFill="WHITE">
+                              <font>
+                                 <Font name="Upheaval TT -BRK-" size="44.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="scoreLabel1" contentDisplay="CENTER" prefHeight="100.0" prefWidth="174.0" text="2500" textFill="WHITE">
+                              <font>
+                                 <Font name="Upheaval TT -BRK-" size="43.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <ImageView id="logout" fx:id="logoutImage1" fitHeight="49.0" fitWidth="101.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                        <image>
+                           <Image url="@../images/logout.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                  <padding>
+                     <Insets right="20.0" />
+                  </padding>
+               </HBox>
+            </children>
+         </AnchorPane>
+         <Pane id="changeView" fx:id="contentPane" layoutY="100.0" prefHeight="526.0" prefWidth="1280.0" />
+      </children>
+   </Pane>
+</StackPane>
