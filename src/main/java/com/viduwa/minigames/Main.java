@@ -15,14 +15,18 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         Font.loadFont(getClass().getResourceAsStream("/fonts/Rimouski.otf"), 14);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/upheavtt.ttf"), 14);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Stormfaze.otf"), 14);
         primaryStage = stage;
         DBManager.initialize();
         showLoginScene();
     }
 
     public static void showLoginScene() {
-        primaryStage.setScene(new Scene(LoginScene.get()));
+        primaryStage.setScene(new Scene(LoginScene.get(),1440,900));
         primaryStage.setResizable(false);
+        primaryStage.setMaximized(false);
+        primaryStage.setFullScreen(false);
         primaryStage.setTitle("PixelFun");
         primaryStage.show();
     }

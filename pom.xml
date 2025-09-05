@@ -87,11 +87,12 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
+                            <mainClass>com.viduwa.minigames/com.viduwa.minigames.Main</mainClass>
                             <options>
                                 <option>--enable-native-access=javafx.graphics</option>
-                                <option>--enable-native-access=org.xerial.sqlitejdbc</option>
+                                <option>--enable-native-access=ALL-UNNAMED</option>
+                                <option>-Dprism.allowhidpi=false</option>
                             </options>
-                            <mainClass>com.viduwa.minigames/com.viduwa.minigames.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
