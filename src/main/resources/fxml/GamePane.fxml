@@ -16,7 +16,7 @@
 
     <ImageView fx:id="gameImage" fitHeight="200.0" fitWidth="250.0" preserveRatio="true">
         <image>
-            <Image url="" />
+            <Image url="@../images/logo.png" />
         </image>
     </ImageView>
 
