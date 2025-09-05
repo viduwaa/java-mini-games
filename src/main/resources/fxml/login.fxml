@@ -3,25 +3,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.*?>
 
-<Pane fx:controller="com.viduwa.minigames.controllers.LoginController" maxHeight="720.0" maxWidth="1280.0" minHeight="360.0" minWidth="480.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1FEC6;" styleClass="container" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="900.0" maxWidth="1440.0" minHeight="360.0" minWidth="480.0" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: F1FEC6;" styleClass="container" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viduwa.minigames.controllers.LoginController">
    <children>
-      <VBox alignment="CENTER" prefHeight="720.0" prefWidth="421.0" styleClass="main">
+      <VBox alignment="CENTER" prefHeight="784.0" prefWidth="625.0" styleClass="main">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To" textAlignment="CENTER" wrappingWidth="222.0599708557129">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To" textAlignment="CENTER" wrappingWidth="272.0599708557129">
                <font>
-                  <Font name="RimouskiSb-Regular" size="31.0" />
+                  <Font name="RimouskiSb-Regular" size="42.0" />
                </font>
             </Text>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="415.0" style="-fx-alignment: center;">
+            <HBox alignment="TOP_CENTER" prefHeight="104.0" prefWidth="469.0" style="-fx-alignment: center;">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="ocean-wave-text,main-title" text="PixelFun" textAlignment="CENTER" wrappingWidth="416.90599822998047">
                      <font>
@@ -30,32 +29,38 @@
                   </Text>
                </children>
             </HBox>
-            <VBox  alignment="TOP_CENTER" prefHeight="393.0" prefWidth="344.0" style="-fx-background-radius: 20; -fx-padding: 10;" styleClass="login-container">
+            <VBox alignment="TOP_CENTER" prefHeight="413.0" prefWidth="466.0" style="-fx-background-radius: 20; -fx-padding: 10;" styleClass="login-container">
                <children>
-                  <VBox prefHeight="96.0" prefWidth="324.0" style="-fx-padding: 10;">
+                  <VBox prefHeight="140.0" prefWidth="505.0" style="-fx-padding: 10;">
                      <children>
                         <Label prefHeight="18.0" prefWidth="323.0" styleClass="text-label" stylesheets="@../styles.css" text="Username">
                            <font>
-                              <Font name="RimouskiSb-Regular" size="20.0" />
+                              <Font name="RimouskiSb-Regular" size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="usernameField" promptText="Username" prefHeight="49.0" prefWidth="304.0" style="-fx-background-radius: 10;" />
+                        <TextField fx:id="usernameField" prefHeight="49.0" prefWidth="485.0" promptText="Username" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="RimouskiSb-Regular" size="16.0" />
+                           </font></TextField>
                      </children>
                   </VBox>
-                  <VBox prefHeight="96.0" prefWidth="324.0" style="-fx-padding: 10;">
+                  <VBox prefHeight="150.0" prefWidth="505.0" style="-fx-padding: 10;">
                      <children>
                         <Label prefHeight="18.0" prefWidth="323.0" styleClass="text-label" stylesheets="@../styles.css" text="Password">
                            <font>
-                              <Font name="RimouskiSb-Regular" size="20.0" />
+                              <Font name="RimouskiSb-Regular" size="24.0" />
                            </font>
                         </Label>
-                        <PasswordField fx:id="passwordField" promptText="Password" prefHeight="49.0" prefWidth="304.0" style="-fx-background-radius: 10;" />
+                        <PasswordField fx:id="passwordField" prefHeight="49.0" prefWidth="304.0" promptText="Password" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="RimouskiSb-Regular" size="16.0" />
+                           </font></PasswordField>
                      </children>
                   </VBox>
                   <Label fx:id="responseMsg" alignment="CENTER" style="-fx-padding: 0 0 8 0" text="" textFill="RED" wrapText="true" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button onAction="#handleLogin" fx:id="loginButton" mnemonicParsing="false" prefHeight="58.0" prefWidth="164.0" style="-fx-background-radius: 10;" styleClass="login-button" stylesheets="@../styles.css" text="Login">
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" prefHeight="58.0" prefWidth="164.0" style="-fx-background-radius: 10;" styleClass="login-button" stylesheets="@../styles.css" text="Login">
                            <font>
                               <Font name="RimouskiSb-Regular" size="30.0" />
                            </font>
@@ -66,8 +71,14 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-font-size: 18;">
                            <children>
-                              <Label styleClass="text-label" text="No account yet? " />
-                              <Hyperlink onAction="#openRegister" style="-fx-padding: 0;" styleClass="sign-up" text="Sign Up " underline="true" />
+                              <Label styleClass="text-label" text="No account yet? ">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
+                              <Hyperlink onAction="#openRegister" style="-fx-padding: 0;" styleClass="sign-up" text="Sign Up " underline="true">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Hyperlink>
                            </children>
                         </HBox>
                      </children>
@@ -75,6 +86,9 @@
                </children>
             </VBox>
          </children>
+      </VBox>
+      <VBox layoutX="750.0" layoutY="135.0" prefHeight="682.0" prefWidth="494.0" >
+         <fx:include source="LeaderboardUI.fxml"/>
       </VBox>
    </children>
 </Pane>
