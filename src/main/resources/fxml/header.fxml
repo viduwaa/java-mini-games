@@ -8,25 +8,26 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viduwa.minigames.controllers.HeaderController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viduwa.minigames.controllers.HeaderController">
 
    <!-- Video Background Layer -->
-   <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1280.0" opacity="1.0" preserveRatio="false" visible="true" />
+   <MediaView fx:id="mediaView" fitHeight="900.0" fitWidth="1440.0" opacity="1.0" preserveRatio="false" visible="true" />
 
    <!-- Content Layer with semi-transparent overlay for better text readability -->
    <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.3);">
       <children>
-         <AnchorPane prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+         <AnchorPane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: rgba(0,0,0,0.5);">
             <children>
                <ImageView fitHeight="100.0" fitWidth="141.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../images/logo.png" />
                   </image>
                </ImageView>
-               <HBox alignment="CENTER_RIGHT" layoutX="761.0" prefHeight="100.0" prefWidth="494.0">
+               <HBox alignment="CENTER_RIGHT" layoutX="940.0" prefHeight="100.0" prefWidth="494.0">
                   <children>
                      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="686.0">
                         <children>
@@ -50,20 +51,20 @@
                </HBox>
             </children>
          </AnchorPane>
-         <AnchorPane layoutY="626.0" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+         <AnchorPane layoutY="800.0" prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: rgba(0,0,0,0.5);">
             <children>
-               <HBox alignment="CENTER_RIGHT" layoutX="761.0" prefHeight="100.0" prefWidth="494.0">
+               <HBox alignment="CENTER_RIGHT" layoutX="887.0" prefHeight="100.0" prefWidth="553.0">
                   <children>
-                     <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="356.0">
+                     <HBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="381.0">
                         <children>
-                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="191.0" text="Score" textFill="WHITE">
+                           <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="259.0" text="total Score :" textFill="WHITE">
                               <font>
-                                 <Font name="Upheaval TT -BRK-" size="44.0" />
+                                 <Font name="Upheaval TT -BRK-" size="32.0" />
                               </font>
                            </Label>
-                           <Label fx:id="scoreLabel1" contentDisplay="CENTER" prefHeight="100.0" prefWidth="174.0" text="2500" textFill="WHITE">
+                           <Label fx:id="totalScore" contentDisplay="CENTER" prefHeight="100.0" prefWidth="126.0" text="0" textFill="WHITE">
                               <font>
-                                 <Font name="Upheaval TT -BRK-" size="43.0" />
+                                 <Font name="Upheaval TT -BRK-" size="32.0" />
                               </font>
                            </Label>
                         </children>
@@ -80,7 +81,13 @@
                </HBox>
             </children>
          </AnchorPane>
-         <Pane id="changeView" fx:id="contentPane" layoutY="100.0" prefHeight="526.0" prefWidth="1280.0" />
+         <Pane id="changeView" fx:id="contentPane" layoutY="120.0" prefHeight="660.0" prefWidth="1440.0" style="-fx-padding: 20 0 0 0;">
+            <children>
+
+            </children></Pane>
+         <VBox fx:id="leaderboard" layoutX="952.0" layoutY="150.0" prefHeight="523.0" prefWidth="445.0" >
+            <fx:include source="LeaderboardUI.fxml"/>
+         </VBox>
       </children>
    </Pane>
 </StackPane>
