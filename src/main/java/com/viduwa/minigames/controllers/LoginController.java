@@ -3,6 +3,7 @@ package com.viduwa.minigames.controllers;
 
 import com.viduwa.minigames.models.User;
 import com.viduwa.minigames.session.Session;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -11,7 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import com.viduwa.minigames.auth.AuthService;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import static com.viduwa.minigames.Main.showMainMenu;
 import static com.viduwa.minigames.Main.showRegisterScene;
@@ -33,6 +40,28 @@ public class LoginController {
     @FXML
     public void openRegister() {
         showRegisterScene();
+    }
+
+    @FXML
+    private void openGitHubProfile() {
+        try {
+            String url = "https://github.com/viduwaa";
+            String os = System.getProperty("os.name").toLowerCase();
+
+            if (os.contains("win")) {
+                // Windows
+                new ProcessBuilder("rundll32", "url.dll,FileProtocolHandler", url).start();
+            } else if (os.contains("mac")) {
+                // macOS
+                new ProcessBuilder("open", url).start();
+            } else {
+                // Linux/Unix
+                new ProcessBuilder("xdg-open", url).start();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Could not open GitHub profile");
+        }
     }
 
     public void handleLogin(ActionEvent actionEvent) {

@@ -5,6 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -87,8 +90,25 @@
             </VBox>
          </children>
       </VBox>
-      <VBox layoutX="750.0" layoutY="135.0" prefHeight="682.0" prefWidth="494.0" >
-         <fx:include source="LeaderboardUI.fxml"/>
+      <VBox layoutX="750.0" layoutY="135.0" prefHeight="620.0" prefWidth="494.0">
+             <fx:include source="LeaderboardUI.fxml" />
       </VBox>
+       <HBox alignment="CENTER" layoutX="808.0" layoutY="755.0" prefHeight="103.0" prefWidth="378.0" style="-fx-background-color: rgba(0,0,12,0.6); -fx-padding: 10;">
+           <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: yellow;" text="Reach Me On: " textAlignment="CENTER" wrappingWidth="250.80999755859375">
+                   <font>
+                       <Font name="RimouskiSb-Regular" size="30.0" />
+                   </font>
+               </Text>
+               <ImageView fitHeight="103.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" style="-fx-padding: 10; -fx-cursor: hand;" onMouseClicked="#openGitHubProfile">
+                   <image>
+                       <Image url="@../images/github-mark-white.png" />
+                   </image>
+                   <effect>
+                       <DropShadow />
+                   </effect>
+               </ImageView>
+           </children>
+       </HBox>
    </children>
 </Pane>
