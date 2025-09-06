@@ -32,7 +32,7 @@
                      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="686.0">
                         <children>
 
-                           <Label fx:id="userLabel" contentDisplay="CENTER" prefHeight="100.0" prefWidth="174.0" text="" textFill="WHITE">
+                           <Label fx:id="userLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="100.0" prefWidth="421.0" text="" textAlignment="RIGHT" textFill="WHITE">
                               <font>
                                  <Font name="Upheaval TT -BRK-" size="43.0" />
                               </font>
@@ -79,14 +79,19 @@
                      <Insets right="20.0" />
                   </padding>
                </HBox>
+                <ImageView id="checkLeaderboard" fx:id="checkLeaderboard" fitHeight="65.0" fitWidth="148.0" layoutX="770.0" layoutY="18.0" onMouseClicked="#openLeaderboard" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/leaderboard.png" />
+                    </image>
+                </ImageView>
             </children>
          </AnchorPane>
          <Pane id="changeView" fx:id="contentPane" layoutY="120.0" prefHeight="660.0" prefWidth="1440.0" style="-fx-padding: 20 0 0 0;">
             <children>
 
             </children></Pane>
-         <VBox fx:id="leaderboard" layoutX="952.0" layoutY="150.0" prefHeight="523.0" prefWidth="445.0" >
-            <fx:include source="LeaderboardUI.fxml"/>
+         <VBox fx:id="leaderboard" layoutX="952.0" layoutY="150.0" prefHeight="523.0" prefWidth="445.0">
+            <fx:include source="LeaderboardUI.fxml" />
          </VBox>
       </children>
    </Pane>

@@ -39,6 +39,8 @@ public class HeaderController implements Initializable {
     private ImageView logoutImage;
     @FXML
     private VBox leaderboard;
+    @FXML
+    private ImageView checkLeaderboard;
 
     private MediaPlayer mediaPlayer;
     private Runnable scoreUpdateCallback; // Callback to refresh total score
@@ -160,6 +162,20 @@ public class HeaderController implements Initializable {
 
         } catch (Exception e) {
             System.err.println("Exception in initialize(): " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void openLeaderboard(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/LeaderboardPage.fxml"));
+            Parent leaderboardRoot = loader.load();
+
+            contentPane.getChildren().clear();
+            contentPane.getChildren().add(leaderboardRoot);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
