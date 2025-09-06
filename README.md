@@ -12,7 +12,6 @@ A **JavaFX-based Mini Games Platform** featuring multiple games with live leader
 * [Database Structure](#database-structure)
 * [Installation & How to Run](#installation--how-to-run)
 * [Usage](#usage)
-* [Screenshots](#screenshots)
 * [Future Enhancements](#future-enhancements)
 * [Author](#author)
 
@@ -80,14 +79,28 @@ The project uses **three tables** in 3NF:
 
 ## 🔹 Installation & How to Run
 
-### 1️⃣ Clone the repository
+> **Important:** Before running the project, you must have **Java JDK 21 installed** and `JAVA_HOME` set. Maven alone will not install Java, and the build will fail without it.
+
+### 1️⃣ Install Java JDK
+
+* Download JDK from [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+* Install and configure `JAVA_HOME` environment variable pointing to the JDK folder.
+* Add `%JAVA_HOME%\bin` (Windows) or `$JAVA_HOME/bin` (Linux) to your PATH.
+* Verify installation:
 
 ```bash
-git clone https://github.com/viduwaa/java-mini-games.git
-cd java-mini-games
+java -version
+javac -version
 ```
 
-### 2️⃣ Install Maven
+### 2️⃣ Clone the repository
+
+```bash
+git clone https://github.com/viduwaa/minigames.git
+cd minigames
+```
+
+### 3️⃣ Install Maven
 
 #### On Linux (Ubuntu/Debian):
 
@@ -99,17 +112,18 @@ sudo apt install maven
 #### On Windows:
 
 1. Download Apache Maven from [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi).
-2. Extract the ZIP to a directory (e.g., `C:\Program Files\Apache\Maven`).
-3. Add Maven `bin` folder to the **System Environment PATH**. Example: `C:\Program Files\Apache\Maven\bin`.
-4. Open a new Command Prompt and check version:
+2. Extract the ZIP to a directory, e.g., `C:\Program Files\Apache\Maven`.
+3. Set up environment variables:
+
+   * **MAVEN\_HOME:** `C:\Program Files\Apache\Maven\apache-maven-3.x.x`
+   * Add `%MAVEN_HOME%\bin` to your **System PATH**.
+4. Open Command Prompt and verify installation:
 
 ```cmd
 mvn -v
 ```
 
----
-
-### 3️⃣ Build the Project
+### 4️⃣ Build the Project
 
 From the project root folder, run:
 
@@ -119,9 +133,7 @@ mvn clean install
 
 * This downloads dependencies, compiles the code, and packages the project.
 
----
-
-### 4️⃣ Run the Project
+### 5️⃣ Run the Project
 
 Run the JavaFX application using Maven:
 
@@ -132,6 +144,15 @@ mvn javafx:run
 * Ensure your **JavaFX SDK** is properly configured in the `pom.xml` if required.
 * The **Main Menu** will appear with Snake, Tetris, and leaderboard access.
 
+### 6️⃣ Initialize the Database
+
+Run the following once (from IDE or a main class) to create the SQLite database and tables:
+
+```java
+com.viduwa.minigames.db.DBManager.initialize();
+```
+
+* This generates `minigames.db` in your project folder.
 
 ---
 
@@ -150,14 +171,13 @@ mvn javafx:run
 4. Click the **Leaderboard button** to see **both Snake and Tetris leaderboards side by side**.
 5. Use the **Back button** to return to the main menu.
 
-
-
 ---
 
 ## 🔹 Future Enhancements
 
 * Multiplayer game modes.
 * Additional mini-games.
+* Web-based version for cross-platform support.
 * More advanced leaderboard features (filters, weekly/monthly stats).
 
 ---
