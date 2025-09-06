@@ -48,7 +48,7 @@ public class GameDAO implements AutoCloseable {
         String sql = """
             SELECT u.username, s.score, s.played_at
             FROM scores s
-            JOIN users u ON s.user_id = u.user_id
+            JOIN users u ON s.user_id = u.id
             WHERE s.game_id = ?
             ORDER BY s.score DESC
             LIMIT 10
